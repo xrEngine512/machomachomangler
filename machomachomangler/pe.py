@@ -164,12 +164,6 @@ def rva_to_file_offset(sections, rva):
                          "PointerToRawData", "SizeOfRawData",
                          "RVA")
 
-def file_offset_to_rva(sections, offset):
-    return _map_sections(sections, rva,
-                         "PointerToRawData", "SizeOfRawData",
-                         "VirtualAddress", "VirtualSize",
-                         "file offset")
-
 def _data_directory_offset(pe_headers, data_directory_index):
     data_directory = pe_headers.data_directories[data_directory_index]
     if not data_directory["Size"]:
